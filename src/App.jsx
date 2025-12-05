@@ -185,59 +185,6 @@ const Portfolio = () => {
                 <SocialBtn icon={<Mail size={20} />} href="mailto:ruchithau@outlook.com" />
               </div>
             </div>
-
-            {/* Smart Stats - Focused on Tools */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-8 border-t border-slate-100 pt-8">
-               
-               {/* Python Stats */}
-               <div className="flex items-center gap-3">
-                  <div className="p-3 bg-white rounded-xl border border-slate-100 shadow-sm flex items-center justify-center">
-                    <PythonIcon />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-2xl font-bold text-slate-900">{getCount('Python')}</div>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wide">Python Projects</div>
-                  </div>
-               </div>
-
-               {/* R Stats */}
-               <div className="flex items-center gap-3">
-                  <div className="p-3 bg-white rounded-xl border border-slate-100 shadow-sm flex items-center justify-center">
-                    <RIcon />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-2xl font-bold text-slate-900">{getCount('R Language')}</div>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wide">R Projects</div>
-                  </div>
-               </div>
-
-               {/* Future SQL */}
-               {getCount('SQL') > 0 && (
-                 <div className="flex items-center gap-3">
-                    <div className="p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
-                      <Database size={32} className="text-blue-600" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-2xl font-bold text-slate-900">{getCount('SQL')}</div>
-                      <div className="text-xs font-bold text-slate-400 uppercase">SQL Projects</div>
-                    </div>
-                 </div>
-               )}
-
-               {/* Future Tableau */}
-               {getCount('Tableau') > 0 && (
-                 <div className="flex items-center gap-3">
-                    <div className="p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
-                      <BarChart3 size={32} className="text-orange-600" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-2xl font-bold text-slate-900">{getCount('Tableau')}</div>
-                      <div className="text-xs font-bold text-slate-400 uppercase">Viz Projects</div>
-                    </div>
-                 </div>
-               )}
-
-            </div>
           </div>
 
           {/* Profile Picture */}
@@ -250,9 +197,6 @@ const Portfolio = () => {
                 alt="Ruchitha Uppuluri" 
                 className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-sm">
-                <Sparkles className="text-emerald-500 w-5 h-5 animate-pulse" />
-              </div>
             </div>
           </div>
         </section>
