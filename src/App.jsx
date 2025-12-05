@@ -420,7 +420,7 @@ const Portfolio = () => {
         </section>
 
         <footer className="mt-32 pt-12 border-t border-slate-200 text-center text-slate-400 text-sm">
-          <p>© 2025 Ruchitha Uppuluri. Built with React & Tailwind CSS.</p>
+          <p>© 2025 Ruchitha Uppuluri.</p>
         </footer>
 
       </main>
