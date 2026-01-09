@@ -93,7 +93,7 @@ const Portfolio = () => {
       tags: ["R Language", "Survival Analysis", "RandomForestSRC"],
       description: "Benchmarked ML against Cox models using 528 patient records. Identified Tumour Stage IVC as a critical risk factor.",
       links: {
-        code: "https://github.com/ruchitha-meenakshi/Prognostic-Survival-Modelling-in-Breast-Cancer"
+        code: "https://github.com/ruchitha-meenakshi/Prognostic-Modeling-of-Head-Neck-Cancer"
       }
     },
     {
