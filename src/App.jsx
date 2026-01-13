@@ -183,6 +183,7 @@ const Portfolio = () => {
               <div className="flex gap-4">
                 <SocialBtn icon={<Linkedin size={20} />} href="https://linkedin.com/in/ruchithauppuluri" />
                 <SocialBtn icon={<Mail size={20} />} href="mailto:ruchithau@outlook.com" />
+                <SocialBtn icon={<Github size={20} />} href="https://github.com/ruchitha-meenakshi" />
               </div>
             </div>
           </div>
@@ -318,7 +319,7 @@ const Portfolio = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 relative z-10">Technical Toolkit</h2>
               
               <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-3xl mx-auto">
-                 {['Python', 'R Language', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'TensorFlow', 'Excel', 'Pandas', 'NumPy', 'Streamlit'].map((skill) => (
+                 {['Python', 'R Language', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'PyTorch', 'Excel', 'Pandas', 'NumPy', 'Streamlit', 'LLM', 'Generative & Agentic AI', 'RAG', 'Langchain'].map((skill) => (
                    <div key={skill} className="px-6 py-3 bg-white/10 text-white rounded-2xl border border-white/10 hover:bg-white hover:text-slate-900 hover:scale-105 transition-all cursor-default font-medium backdrop-blur-sm">
                      {skill}
                    </div>
