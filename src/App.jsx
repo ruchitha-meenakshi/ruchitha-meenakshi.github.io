@@ -14,7 +14,10 @@ import {
   User,
   BarChart3,
   Cpu,
-  Globe
+  Globe,
+  Pin,
+  Award,
+  MessageSquare
 } from 'lucide-react';
 
 // --- SUB-COMPONENTS ---
@@ -30,9 +33,8 @@ const SocialBtn = ({ icon, href }) => (
   </a>
 );
 
-// --- CUSTOM BRAND ICONS (Images from URL) ---
+// --- CUSTOM BRAND ICONS (Official SVGs via URL) ---
 
-// Official Python Logo
 const PythonIcon = () => (
   <img 
     src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" 
@@ -41,7 +43,6 @@ const PythonIcon = () => (
   />
 );
 
-// Official R Logo
 const RIcon = () => (
   <img 
     src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" 
@@ -65,20 +66,33 @@ const Portfolio = () => {
   // --- YOUR DATA ---
   const projects = [
     {
+      id: 5,
+      title: "Smart Onboarding Assistant",
+      pinned: true, 
+      image: "/images/onboarding.png", 
+      tags: ["GenAI", "RAG", "Python", "Streamlit"],
+      description: "An AI-powered Q&A assistant designed to streamline employee onboarding. Utilizes Retrieval Augmented Generation (RAG) to answer queries instantly from internal policy documents.",
+      links: {
+        code: "https://github.com/ruchitha-meenakshi/smart-onboarding-assistant"
+      }
+    },
+    {
       id: 1,
       title: "Healthcare Premium Prediction",
+      pinned: true,
       image: "/images/healthcare_premium.png",
       tags: ["Python", "Machine Learning", "Streamlit", "Scikit-Learn"],
       description: "An interactive pricing engine that predicts insurance premiums with 18% higher accuracy. Deployed for real-time risk assessment.",
       links: {
-        demo: "https://ml-premium-prediction-project-cb.streamlit.app/", // Link to your Streamlit app
-        code: "https://github.com/ruchitha-meenakshi/ml-project-premium-prediction", // Link to Repo
-        linkedin: "https://www.linkedin.com/posts/ruchithauppuluri_ai-machinelearning-datascience-activity-7396508304903966720-sGg3?utm_source=share&utm_medium=member_desktop&rcm=ACoAACijG-8BTsPM6tAdX5FjSKez9yFXjBY7Yi8" // Link to your specific Post
+        demo: "https://ml-premium-prediction-project-cb.streamlit.app/", 
+        code: "https://github.com/ruchitha-meenakshi/ml-project-premium-prediction", 
+        linkedin: "https://www.linkedin.com/posts/ruchithauppuluri_ai-machinelearning-datascience-activity-7396508304903966720-sGg3?utm_source=share&utm_medium=member_desktop&rcm=ACoAACijG-8BTsPM6tAdX5FjSKez9yFXjBY7Yi8" 
       }
     },
     {
       id: 2,
       title: "Study Dropout Prediction in ALSPAC Cohort",
+      pinned: false,
       image: "/images/predicting_study_dropout.png", 
       tags: ["R Language", "Machine Learning", "MICE", "Random Forest"],
       description: "Predictive framework analyzing 14,000+ records to identify participant dropout risk, enabling proactive retention strategies.",
@@ -89,6 +103,7 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Prognostic Modeling of Head & Neck Cancer",
+      pinned: false,
       image: "/images/predictive_modeling.png", 
       tags: ["R Language", "Survival Analysis", "RandomForestSRC"],
       description: "Benchmarked ML against Cox models using 528 patient records. Identified Tumour Stage IVC as a critical risk factor.",
@@ -99,6 +114,7 @@ const Portfolio = () => {
     {
       id: 4,
       title: "Lauki Finance: Credit Risk Modelling",
+      pinned: false,
       image: "/images/credit_risk_modelling.png", 
       tags: ["Python", "Machine Learning", "XGBoost", "SMOTE"],
       description: "Automated credit scoring system achieving 94% recall for defaulters. Solved class imbalance using SMOTE-Tomek.",
@@ -108,6 +124,55 @@ const Portfolio = () => {
       }
     }
   ];
+
+  // --- CERTIFICATES DATA ---
+  const certificates = [
+    {
+      id: 1,
+      title: "Python: Beginner to Advanced",
+      issuer: "Codebasics",
+      year: "2025",
+      image: "https://codebasics.io/certificate/image/CB-48-613398",
+      link: "https://codebasics.io/certificate/image/CB-48-613398", 
+    },
+    {
+      id: 2,
+      title: "SQL for Data Science",
+      issuer: "Codebasics",
+      year: "2025",
+      image: "https://codebasics.io/certificate/image/CB-82-613398",
+      link: "https://codebasics.io/certificate/image/CB-82-613398",
+    },
+    {
+      id: 3,
+      title: "Math and Statistics For AI",
+      issuer: "Codebasics",
+      year: "2025",
+      image: "https://codebasics.io/certificate/image/CB-63-613398",
+      link: "https://codebasics.io/certificate/image/CB-63-613398",
+    },
+    {
+      id: 4,
+      title: "Master Machine Learning",
+      issuer: "Codebasics",
+      year: "2025",
+      image: "https://codebasics.io/certificate/image/CB-69-613398",
+      link: "https://codebasics.io/certificate/image/CB-69-613398",
+    },
+    {
+      id: 5,
+      title: "Clinical Trial Analysis",
+      issuer: "Internshala", 
+      year: "2022",
+      image: "https://images.codebasics.io/filters:format(webp)/fit-in/450x450/uploads/learner-portfolio/certificates/613398/6931c7083c51f/46c38346c6.png",
+      link: "https://trainings.internshala.com/view_certificate/255B89B2-3DF6-E182-0C77-378225D77852/5C7BC0AB-F7C0-724F-1F98-2F24DFDC0FF2/", 
+    }
+  ];
+
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (a.pinned === b.pinned) return 0;
+    return a.pinned ? -1 : 1;
+  });
 
   const getCount = (tag) => projects.filter(p => p.tags.includes(tag)).length;
 
@@ -120,7 +185,7 @@ const Portfolio = () => {
           <span className="font-bold text-xl text-slate-900 tracking-tight">Ruchitha<span className="text-emerald-500">.</span></span>
           
           <div className="hidden md:flex gap-8">
-            {['About', 'Projects', 'Skills', 'Experience'].map((item) => (
+            {['About', 'Projects', 'Skills', 'Experience', 'Certificates'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -129,6 +194,13 @@ const Portfolio = () => {
                 {item}
               </a>
             ))}
+            {/* Separate link for Contact to handle the space in ID and text difference */}
+            <a
+                href="#contact"
+                className="text-sm font-medium text-slate-500 hover:text-emerald-600 transition-colors"
+            >
+              Get in Touch
+            </a>
           </div>
 
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-slate-700">
@@ -138,7 +210,7 @@ const Portfolio = () => {
 
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-b border-slate-100 p-4 md:hidden flex flex-col gap-4 shadow-xl">
-            {['About', 'Projects', 'Skills', 'Experience'].map((item) => (
+            {['About', 'Projects', 'Skills', 'Experience', 'Certificates'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -148,6 +220,13 @@ const Portfolio = () => {
                 {item}
               </a>
             ))}
+            <a 
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-slate-600 font-medium py-2 px-4 hover:bg-slate-50 rounded-lg"
+              >
+                Get in Touch
+              </a>
           </div>
         )}
       </nav>
@@ -241,19 +320,22 @@ const Portfolio = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div key={project.id} className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 flex flex-col h-full overflow-hidden">
+            {sortedProjects.map((project) => (
+              <div key={project.id} className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 flex flex-col h-full overflow-hidden relative">
                 
+                {/* Project Thumbnail */}
                 <div className="aspect-video w-full relative bg-slate-50 border-b border-slate-100 flex items-center justify-center overflow-hidden">
-                  {/* Background pattern to make empty space look nice */}
-                  <div className="absolute inset-0 bg-slate-200/30 pattern-dots"></div>
-                  
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    // 'object-contain': Shows full image. 'p-6': Adds frame/spacing.
-                    className="w-full h-full object-contain p-6 z-10 hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
+                  
+                  {project.pinned && (
+                    <div className="absolute top-4 left-4 z-30 bg-emerald-500 text-white p-2 rounded-full shadow-lg border border-white/20" title="Pinned Project">
+                      <Pin size={16} fill="currentColor" />
+                    </div>
+                  )}
 
                   {/* Top Right External Link */}
                   <a href={project.links?.code || "#"} className="absolute top-4 right-4 z-30 p-2.5 bg-white rounded-full text-slate-900 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:text-emerald-600">
@@ -272,7 +354,6 @@ const Portfolio = () => {
 
                   {/* ACTION BUTTONS */}
                   <div className="flex items-center gap-3 mb-6">
-                    {/* View Code Button */}
                     {project.links?.code && (
                       <a href={project.links.code} target="_blank" rel="noreferrer" 
                          className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-bold transition-colors">
@@ -280,7 +361,6 @@ const Portfolio = () => {
                       </a>
                     )}
                     
-                    {/* View Demo Button (if available) */}
                     {project.links?.demo && (
                       <a href={project.links.demo} target="_blank" rel="noreferrer" 
                          className="flex items-center gap-2 px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-lg text-sm font-bold transition-colors">
@@ -288,7 +368,6 @@ const Portfolio = () => {
                       </a>
                     )}
 
-                    {/* LinkedIn Post Button (Special Highlight) */}
                     {project.links?.linkedin && (
                       <a href={project.links.linkedin} target="_blank" rel="noreferrer" 
                          className="flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg text-sm font-bold transition-colors border border-blue-100">
@@ -319,7 +398,7 @@ const Portfolio = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 relative z-10">Technical Toolkit</h2>
               
               <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-3xl mx-auto">
-                 {['Python', 'R Language', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'PyTorch', 'Excel', 'Pandas', 'NumPy', 'Streamlit', 'LLM', 'Generative & Agentic AI', 'RAG', 'Langchain'].map((skill) => (
+                 {['Python', 'R Language', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'PyTorch', 'Excel', 'Pandas', 'NumPy', 'Streamlit', 'LLM', 'Generative & Agentic AI', 'RAG', 'LangChain'].map((skill) => (
                    <div key={skill} className="px-6 py-3 bg-white/10 text-white rounded-2xl border border-white/10 hover:bg-white hover:text-slate-900 hover:scale-105 transition-all cursor-default font-medium backdrop-blur-sm">
                      {skill}
                    </div>
@@ -329,7 +408,7 @@ const Portfolio = () => {
         </section>
 
         {/* --- EXPERIENCE SECTION --- */}
-        <section id="experience" className="scroll-mt-24">
+        <section id="experience" className="scroll-mt-24 mb-32">
           <div className="flex items-center gap-4 mb-12">
              <div className="p-3 bg-purple-100 text-purple-600 rounded-xl"><Cpu size={24} /></div>
              <h2 className="text-3xl font-bold text-slate-900">Experience</h2>
@@ -364,8 +443,75 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* --- AWARDS & CERTIFICATES SECTION (New) --- */}
+        <section id="certificates" className="scroll-mt-24 mb-32">
+          <div className="flex items-center gap-4 mb-12">
+             <div className="p-3 bg-yellow-100 text-yellow-600 rounded-xl"><Award size={24} /></div>
+             <h2 className="text-3xl font-bold text-slate-900">Awards & Certifications</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certificates.map((cert) => (
+              <a 
+                key={cert.id} 
+                href={cert.link} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full cursor-pointer"
+              >
+                 
+                 {/* Certificate Image */}
+                 <div className="h-48 mb-4 overflow-hidden rounded-xl border border-slate-100 relative bg-slate-50 flex items-center justify-center">
+                    <img 
+                      src={cert.image} 
+                      alt={cert.title} 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                    />
+                 </div>
+
+                 <div className="flex-1">
+                   <h4 className="font-bold text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">
+                     {cert.title}
+                   </h4>
+                   <p className="text-sm text-slate-500 mb-3">{cert.issuer} • {cert.year}</p>
+                 </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* --- CONTACT SECTION (New) --- */}
+        <section id="contact" className="scroll-mt-24 mb-32">
+           <div className="bg-slate-900 rounded-[2.5rem] p-10 md:p-16 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
+                 Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-6">
+                 {/* Email Card */}
+                 <a href="mailto:ruchithau@outlook.com" className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all group min-w-[200px]">
+                    <div className="text-emerald-400 mb-3 group-hover:scale-110 transition-transform"><Mail size={28} className="mx-auto" /></div>
+                    <div className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-1">Mail Me</div>
+                 </a>
+
+                 {/* LinkedIn Card */}
+                 <a href="https://www.linkedin.com/in/ruchithauppuluri/" target="_blank" rel="noreferrer" className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all group min-w-[200px]">
+                    <div className="text-blue-400 mb-3 group-hover:scale-110 transition-transform"><Linkedin size={28} className="mx-auto" /></div>
+                    <div className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-1">LinkedIn</div>
+                 </a>
+
+                 {/* GitHub Card */}
+                 <a href="https://github.com/ruchitha-meenakshi" target="_blank" rel="noreferrer" className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all group min-w-[200px]">
+                    <div className="text-white mb-3 group-hover:scale-110 transition-transform"><Github size={28} className="mx-auto" /></div>
+                    <div className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-1">GitHub</div>
+                 </a>
+              </div>
+           </div>
+        </section>
+
         <footer className="mt-32 pt-12 border-t border-slate-200 text-center text-slate-400 text-sm">
-          <p>© 2025 Ruchitha Uppuluri.</p>
+          <p>© 2025 Ruchitha Uppuluri. Built with React & Tailwind CSS.</p>
         </footer>
 
       </main>
