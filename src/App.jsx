@@ -131,6 +131,7 @@ const Portfolio = () => {
       id: 1,
       title: "Python: Beginner to Advanced",
       issuer: "Codebasics",
+      month:"Dec",
       year: "2025",
       image: "https://codebasics.io/certificate/image/CB-48-613398",
       link: "https://codebasics.io/certificate/image/CB-48-613398", 
@@ -139,22 +140,25 @@ const Portfolio = () => {
       id: 2,
       title: "SQL for Data Science",
       issuer: "Codebasics",
+      month:"Dec",
       year: "2025",
       image: "https://codebasics.io/certificate/image/CB-82-613398",
       link: "https://codebasics.io/certificate/image/CB-82-613398",
     },
     {
       id: 3,
-      title: "Math and Statistics For AI",
+      title: "Gen AI to Agentic AI with Business Projects",
       issuer: "Codebasics",
-      year: "2025",
-      image: "https://codebasics.io/certificate/image/CB-63-613398",
-      link: "https://codebasics.io/certificate/image/CB-63-613398",
+      month:"Jan",
+      year: "2026",
+      image: "https://codebasics.io/certificate/image/CB-90-613398",
+      link: "https://codebasics.io/certificate/image/CB-90-613398",
     },
     {
       id: 4,
       title: "Master Machine Learning",
       issuer: "Codebasics",
+      month:"Dec",
       year: "2025",
       image: "https://codebasics.io/certificate/image/CB-69-613398",
       link: "https://codebasics.io/certificate/image/CB-69-613398",
@@ -163,6 +167,7 @@ const Portfolio = () => {
       id: 5,
       title: "Clinical Trial Analysis",
       issuer: "Internshala", 
+      month:"May",
       year: "2022",
       image: "https://images.codebasics.io/filters:format(webp)/fit-in/450x450/uploads/learner-portfolio/certificates/613398/6931c7083c51f/46c38346c6.png",
       link: "https://trainings.internshala.com/view_certificate/255B89B2-3DF6-E182-0C77-378225D77852/5C7BC0AB-F7C0-724F-1F98-2F24DFDC0FF2/", 
@@ -473,7 +478,7 @@ const Portfolio = () => {
                    <h4 className="font-bold text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">
                      {cert.title}
                    </h4>
-                   <p className="text-sm text-slate-500 mb-3">{cert.issuer} • {cert.year}</p>
+                   <p className="text-sm text-slate-500 mb-3">{cert.issuer} • {cert.month} • {cert.year}</p>
                  </div>
               </a>
             ))}
