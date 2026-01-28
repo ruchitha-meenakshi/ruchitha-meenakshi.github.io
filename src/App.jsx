@@ -254,7 +254,7 @@ const Portfolio = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-10">
               <a 
-                href="/Ruchitha_Uppuluri_Resume.pdf" 
+                href="/Ruchitha_Uppuluri_Resume.pdf"
                 className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-emerald-600 transition-all flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-1"
               >
                 Download Resume <Download size={18} />
