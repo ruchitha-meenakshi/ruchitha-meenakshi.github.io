@@ -66,6 +66,19 @@ const Portfolio = () => {
   // --- YOUR DATA ---
   const projects = [
     {
+      id: 6,
+      title: "Safety-Signal-AI",
+      pinned: true, 
+      image: "/images/safetysignal.png", 
+      tags: ["Databricks", "PySpark", "NLP", "Machine Learning", "Streamlit"],
+      description: "An end-to-end pharmacovigilance surveillance system built on the Databricks Lakehouse. Automates the detection of adverse drug events (ADEs) from patient narratives using SparkML and Delta Lake.",
+      links: {
+        demo: "https://safety-signal-ai.streamlit.app/",
+        code: "https://github.com/ruchitha-meenakshi/Safety-Signal-AI",
+        linkedin: "https://www.linkedin.com/posts/ruchithauppuluri_codebasics-resumeprojectchallenge-databricks-activity-7422589161762705409-7jUS/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACijG-8BTsPM6tAdX5FjSKez9yFXjBY7Yi8"
+      }
+    },
+    {
       id: 5,
       title: "Smart Onboarding Assistant",
       pinned: true, 
@@ -129,40 +142,40 @@ const Portfolio = () => {
   const certificates = [
     {
       id: 1,
-      title: "Python: Beginner to Advanced",
+      title: "Gen AI & Data Science Bootcamp 3.0: With Practical Job Placement Support & Virtual Internship",
       issuer: "Codebasics",
-      month:"Dec",
-      year: "2025",
-      image: "https://codebasics.io/certificate/image/CB-48-613398",
-      link: "https://codebasics.io/certificate/image/CB-48-613398", 
-    },
-    {
-      id: 2,
-      title: "SQL for Data Science",
-      issuer: "Codebasics",
-      month:"Dec",
-      year: "2025",
-      image: "https://codebasics.io/certificate/image/CB-82-613398",
-      link: "https://codebasics.io/certificate/image/CB-82-613398",
-    },
-    {
-      id: 3,
-      title: "Gen AI to Agentic AI with Business Projects",
-      issuer: "Codebasics",
-      month:"Jan",
+      month:"Feb",
       year: "2026",
-      image: "https://codebasics.io/certificate/image/CB-90-613398",
-      link: "https://codebasics.io/certificate/image/CB-90-613398",
+      image: "https://codebasics.io/certificate/image/CB-BT-3-613398",
+      link: "https://codebasics.io/certificate/image/CB-BT-3-613398", 
     },
-    {
-      id: 4,
-      title: "Master Machine Learning",
-      issuer: "Codebasics",
-      month:"Dec",
-      year: "2025",
-      image: "https://codebasics.io/certificate/image/CB-69-613398",
-      link: "https://codebasics.io/certificate/image/CB-69-613398",
-    },
+    // {
+    //   id: 2,
+    //   title: "SQL for Data Science",
+    //   issuer: "Codebasics",
+    //   month:"Dec",
+    //   year: "2025",
+    //   image: "https://codebasics.io/certificate/image/CB-82-613398",
+    //   link: "https://codebasics.io/certificate/image/CB-82-613398",
+    // },
+    // {
+    //   id: 3,
+    //   title: "Gen AI to Agentic AI with Business Projects",
+    //   issuer: "Codebasics",
+    //   month:"Jan",
+    //   year: "2026",
+    //   image: "https://codebasics.io/certificate/image/CB-90-613398",
+    //   link: "https://codebasics.io/certificate/image/CB-90-613398",
+    // },
+    // {
+    //   id: 4,
+    //   title: "Master Machine Learning",
+    //   issuer: "Codebasics",
+    //   month:"Dec",
+    //   year: "2025",
+    //   image: "https://codebasics.io/certificate/image/CB-69-613398",
+    //   link: "https://codebasics.io/certificate/image/CB-69-613398",
+    // },
     {
       id: 5,
       title: "Clinical Trial Analysis",
