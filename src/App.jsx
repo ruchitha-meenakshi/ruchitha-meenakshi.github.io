@@ -17,6 +17,7 @@ import {
   Globe,
   Pin,
   Award,
+  BookOpen,
   MessageSquare
 } from 'lucide-react';
 
@@ -71,7 +72,7 @@ const Portfolio = () => {
       pinned: true, 
       image: "/images/safetysignal.png", 
       tags: ["Databricks", "PySpark", "NLP", "Machine Learning", "Streamlit"],
-      description: "An end-to-end pharmacovigilance surveillance system built on the Databricks Lakehouse. Automates the detection of adverse drug events (ADEs) from patient narratives using SparkML and Delta Lake.",
+      description: "An end-to-end pharmacovigilance surveillance system built on the Databricks Lakehouse. Automates the detection of adverse drug events from patient narratives — 215K records · AUC 0.87 · 81% workload reduction.",
       links: {
         demo: "https://safety-signal-ai.streamlit.app/",
         code: "https://github.com/ruchitha-meenakshi/Safety-Signal-AI",
@@ -83,8 +84,8 @@ const Portfolio = () => {
       title: "Smart Onboarding Assistant",
       pinned: true, 
       image: "/images/onboarding.png", 
-      tags: ["GenAI", "RAG", "Python", "Streamlit"],
-      description: "An AI-powered Q&A assistant designed to streamline employee onboarding. Utilizes Retrieval Augmented Generation (RAG) to answer queries instantly from internal policy documents.",
+      tags: ["GenAI", "MCP", "Python", "Streamlit"],
+      description: "An agentic AI system that automates end-to-end HR workflows using Anthropic's Model Context Protocol (MCP). A single natural language instruction triggers autonomous actions across databases, email, and calendar systems",
       links: {
         code: "https://github.com/ruchitha-meenakshi/smart-onboarding-assistant"
       }
@@ -108,7 +109,7 @@ const Portfolio = () => {
       pinned: false,
       image: "/images/predicting_study_dropout.png", 
       tags: ["R Language", "Machine Learning", "MICE", "Random Forest"],
-      description: "Predictive framework analyzing 14,000+ records to identify participant dropout risk, enabling proactive retention strategies.",
+      description: "MSc Dissertation — University of Bristol. Predictive framework analyzing 14,000+ records to identify participant dropout risk, achieving AUC 0.75, enabling proactive retention strategies.",
       links: {
         code: "https://github.com/MRCIEU/predicting-ALSPAC-dropout"
       }
@@ -138,6 +139,18 @@ const Portfolio = () => {
     }
   ];
 
+  // --- PUBLICATIONS DATA ---
+  const publications = [
+    {
+      id: 1,
+      title: "A Hybrid Feature Selection Model for Predicting Chronic Obstructive Pulmonary Disease", // Change this to your paper title
+      journal: " IEEEXplore/ Third International Conference on Inventive Research in Computing Applications (ICIRCA)",
+      year: "2021",
+      description: "Aimed at the early detection and identification of potential biomarkers in common chronic lung inflammatory diseases. Utilizes an efficient hybrid approach that likely combines filter methods (for initial ranking/filtering) and wrapper methods (for optimal subset selection).",
+      link: "https://doi.org/10.1109/ICIRCA51532.2021.9544861" // Change this to your link
+    }
+  ];
+
   // --- CERTIFICATES DATA ---
   const certificates = [
     {
@@ -149,15 +162,6 @@ const Portfolio = () => {
       image: "https://codebasics.io/certificate/image/CB-BT-3-613398",
       link: "https://codebasics.io/certificate/image/CB-BT-3-613398", 
     },
-    // {
-    //   id: 2,
-    //   title: "SQL for Data Science",
-    //   issuer: "Codebasics",
-    //   month:"Dec",
-    //   year: "2025",
-    //   image: "https://codebasics.io/certificate/image/CB-82-613398",
-    //   link: "https://codebasics.io/certificate/image/CB-82-613398",
-    // },
     // {
     //   id: 3,
     //   title: "Gen AI to Agentic AI with Business Projects",
@@ -184,6 +188,24 @@ const Portfolio = () => {
       year: "2022",
       image: "https://images.codebasics.io/filters:format(webp)/fit-in/450x450/uploads/learner-portfolio/certificates/613398/6931c7083c51f/46c38346c6.png",
       link: "https://trainings.internshala.com/view_certificate/255B89B2-3DF6-E182-0C77-378225D77852/5C7BC0AB-F7C0-724F-1F98-2F24DFDC0FF2/", 
+    },
+    {
+      id: 6,
+      title: "Machine Learning",
+      issuer: "Udemy", 
+      month: "Mar",
+      year: "2022",
+      image: "/images/udemy_ml_cert.jpg", 
+      link: "https://www.udemy.com/certificate/UC-fc20618a-db49-4d58-8f40-fd1ad4fc035c/", 
+    },
+    {
+      id: 7,
+      title: "Exploratory Data Analysis",
+      issuer: "Coursera", 
+      month: "Oct",
+      year: "2020",
+      image: "/images/coursera_eda_cert.jpeg", 
+      link: "https://coursera.org/share/81cb67ca853e2ef61b6853ceb1412746", 
     }
   ];
 
@@ -203,7 +225,7 @@ const Portfolio = () => {
           <span className="font-bold text-xl text-slate-900 tracking-tight">Ruchitha<span className="text-emerald-500">.</span></span>
           
           <div className="hidden md:flex gap-8">
-            {['About', 'Projects', 'Skills', 'Experience', 'Certificates'].map((item) => (
+            {['About', 'Projects', 'Publications','Skills', 'Experience', 'Certificates'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -228,7 +250,7 @@ const Portfolio = () => {
 
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-b border-slate-100 p-4 md:hidden flex flex-col gap-4 shadow-xl">
-            {['About', 'Projects', 'Skills', 'Experience', 'Certificates'].map((item) => (
+            {['About', 'Projects', 'Publications','Skills', 'Experience', 'Certificates'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -256,7 +278,7 @@ const Portfolio = () => {
           
           <div className="flex-1 text-center md:text-left">
             <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold mb-6 tracking-wide">
-              DATA SCIENTIST | STATISTICAL PROGRAMMER
+              DATA SCIENTIST | AI RESEARCHER
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
@@ -316,10 +338,16 @@ const Portfolio = () => {
 
               <div className="prose prose-lg text-slate-600 max-w-none leading-relaxed">
                 <p className="mb-6">
-                  My journey began with a fascination for how small patterns can change big outcomes, leading me to specialize in <span className="font-semibold text-slate-800">Statistical Modelling</span> and <span className="font-semibold text-slate-800">Advanced Analytics</span>.
+                  My journey began with a fascination for how small patterns can change big outcomes.
+                </p>
+                <p className="mb-6">
+                  I started in clinical research, my Master's in Medical Statistics and Health Data Science at Bristol trained me to find signal in complex, messy data. Two years inside a clinical NHS team then showed me what happens when data quality breaks down in practice. That pushed me toward applied AI. I didn't just want to analyse, I wanted to build.
+                </p>
+                <p className="mb-6">
+                  Today, I build end-to-end AI systems that turn noisy data into action. From pharmacovigilance surveillance on enterprise Databricks pipelines to agentic AI tools using the latest protocols — everything I build is transparent, explainable, and deployed.
                 </p>
                 <p>
-                  I thrive on transforming complex, imperfect data into insights that drive clarity and efficiency. Whether building predictive models or crafting intuitive dashboards, I focus on solutions that are transparent, reliable, and genuinely impactful. Meaningful progress starts with asking better questions—I’m here to build the data-driven answers.
+                  Meaningful progress starts with asking better questions. I'm here to build the answers.
                 </p>
               </div>
            </div>
@@ -406,7 +434,39 @@ const Portfolio = () => {
             ))}
           </div>
         </section>
+        {/* --- PUBLICATIONS SECTION (NEW) --- */}
+        <section id="publications" className="mb-32 scroll-mt-24">
+          <div className="flex items-center gap-4 mb-12">
+             <div className="p-3 bg-blue-100 text-blue-600 rounded-xl">
+               <BookOpen size={24} />
+             </div>
+             <div>
+                <h2 className="text-3xl font-bold text-slate-900">Publications</h2>
+                <p className="text-slate-500">Academic research and peer-reviewed papers.</p>
+             </div>
+          </div>
 
+          <div className="grid gap-6">
+            {publications.map((pub) => (
+              <a 
+                key={pub.id} 
+                href={pub.link} 
+                target="_blank" 
+                rel="noreferrer"
+                className="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+              >
+                <div className="flex-1">
+                  <div className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-2">{pub.journal} • {pub.year}</div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">{pub.title}</h3>
+                  <p className="text-slate-500 leading-relaxed max-w-3xl">{pub.description}</p>
+                </div>
+                <div className="p-3 bg-slate-50 group-hover:bg-emerald-500 group-hover:text-white rounded-full transition-colors">
+                  <ExternalLink size={20} />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
         {/* --- SKILLS SECTION --- */}
         <section id="skills" className="mb-32 scroll-mt-24">
            <div className="bg-slate-900 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden text-center">
@@ -416,7 +476,7 @@ const Portfolio = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 relative z-10">Technical Toolkit</h2>
               
               <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-3xl mx-auto">
-                 {['Python', 'R Language', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'PyTorch', 'Excel', 'Pandas', 'NumPy', 'Streamlit', 'LLM', 'Generative & Agentic AI', 'RAG', 'LangChain'].map((skill) => (
+                 {['Python', 'R', 'SQL', 'Scikit-Learn', 'Git', 'Survival Analysis', 'PyTorch', 'Excel', 'Pandas', 'NumPy', 'Streamlit', 'LLM', 'Generative AI', 'Agentic AI', 'RAG', 'LangChain', 'Databricks', 'MLflow', 'MCP'].map((skill) => (
                    <div key={skill} className="px-6 py-3 bg-white/10 text-white rounded-2xl border border-white/10 hover:bg-white hover:text-slate-900 hover:scale-105 transition-all cursor-default font-medium backdrop-blur-sm">
                      {skill}
                    </div>
